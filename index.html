@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<title>Creating of the TODO LIST with MVC</title>
+	<link rel="stylesheet" href="css/styles.css">
+	<script data-main="js/main" src="js/lib/require.js"></script>
+</head>
+
+<body>
+	<script type="text/template" id="wrapp-tmpl">
+		<div class="wrapper">
+			<h1>TODO LIST</h1>
+			<div class="controls">
+				<input type="text" class="new-task" placeholder="type your task">
+				<button class="add-btn button"><span>TO ADD</span></button>
+			</div>
+			<ul class="item-list"></ul>
+		</div>
+	</script>
+
+	<script type="text/template" id="task-template">
+		<% data.forEach(function(item) { %>
+			<li data-val="<%= item %>" class="task-template__edit">
+				<input type="checkbox">
+				<%= item %>
+					<input type="button" title="Delete" class="delete icon-cross2" value="&#xe901;" />
+					<input type="button" title="Edit" class="edit icon-edit" value="&#xe902;" />
+			</li>
+			<% }); %>
+	</script>
+
+	<script type="text/template" id="templEdit">
+		<input type="text" class="templEdit__save" value='<%= title %>' />
+	</script>
+</body>
+
+</html>
